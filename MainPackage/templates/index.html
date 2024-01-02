@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Phú Quý Island</h1>
+    <h1>{{ message }}</h1>
+
+    <form method="post" action="/login">
+        <input type="text" name="username" placeholder="Nhap username...">
+        <input type="password" name="password" placeholder="Nhap password...">
+        <input type="submit" value="Dang nhap">
+    </form>
+
+    <hr>
+
+    <form method="get" action="">
+        <input type="text" name="keyword" placeholder="Nhap tu khoa dẻ tim...">
+        <input type="submit" value="Tim kiem">
+    </form>
+
+    <ul>
+        {% for u in users %}
+        <li>{{ u.name }} - {{ u.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <form method="post" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="avatar" />
+        <input type="submit" value="Upload" />
+    </form>
+
+</body>
+</html>
